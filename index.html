@@ -1,1 +1,63 @@
-hello
+<html lang="ja">
+  <h1 style="text-align: center">ドラムロール大喜利システム</h1>
+  <h2 id="odai_text" style="text-align: center">ハサミを刃の方を向けて渡してきそうなHajimariの人第1位は？」</h2>
+  <div align="center">
+  <button id="odai_change">お題を変える</button>
+  </div>
+  <audio id="oogiri" preload="auto">
+    <source src="music/music1.mp3" type="audio/mp3" loop controls />
+  </audio>
+  <h2 style="text-align: center">ドラムロール</h2>
+  <div align="center">
+    <button id="loop">START</button>
+    <button id="stop">STOP</button>
+  </div>
+  <script type="text/javascript">
+    let odai = [
+    "「ハサミを刃の方を向けて渡してきそうなHajimariの人第1位は？」",
+    "「家のハンガーが全部クリーニング店でもらったやつしかなさそうなHajimariの人第1位は？」",
+    "「みんなも食べる焼きそばなのに「美味くなるから」と自分の飲みかけのビールを入れてきそうなHajimariの人第1位は？」",
+    "「スマホの画面がバキバキでも気にしてなさそうなHajimariの人第一位は？」",
+    "「さっきまで座ってた椅子がめちゃくちゃ熱そうなHajimariの人第一位は？」",
+    "「ラーメンの汁に沈んだコーンをいつまでも探してそうなHajimariの人第一位は？」",
+    ]
+    // Audioオブジェクトを作成
+    let ad = new Audio("music/drumroll_3.mp3");
+    let sy = new Audio("music/cymbal.mp3");
+    let odaiIndex = 0;
+
+    // 連続再生ボタン
+    let elem_loop = document.getElementById("loop");
+    elem_loop.addEventListener(
+      "click",
+      function () {
+        ad.currentTime = 0;
+        ad.play();
+        ad.loop = true; // ループ再生
+      },
+      false
+    );
+
+    let elem_stop= document.getElementById("stop");
+    elem_stop.addEventListener(
+      "click",
+      function () {
+        ad.pause();
+        sy.play();
+      },
+      false
+    );
+
+    var odaiText = document.getElementById("odai_text");    
+    let elem_odai= document.getElementById("odai_change");
+    elem_odai.addEventListener(
+      "click",
+      function () {
+        odaiIndex++;
+        if(odaiIndex >= odai.length) odaiIndex = 0;
+        odaiText.innerHTML = odai[odaiIndex];
+      },
+      false
+    );
+  </script>
+</html>
