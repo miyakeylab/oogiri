@@ -11,6 +11,11 @@ html {
   font-size: 62.5%;
 }
 
+body{
+  width: 960px;
+  margin: auto;
+}
+
 .btn,
 a.btn,
 button.btn {
@@ -182,6 +187,45 @@ a.btn-emergency:active .btn-emergency-start-top {
   text-align: center;
 
   color: #a3e4f6;
+}
+
+
+
+a.btn-border {
+  margin-bottom: 12px;
+  padding: 10px;
+
+  -webkit-transition: all 0.3s;
+
+  transition: all 0.3s;
+
+  border: 2px solid #000;
+  background: -webkit-radial-gradient(#000 15%, rgba(0, 0, 0, 0) 16%),
+    -webkit-radial-gradient(#000 15%, rgba(0, 0, 0, 0) 16%), #fc0;
+  background: radial-gradient(#000 15%, rgba(0, 0, 0, 0) 16%),
+    radial-gradient(#000 15%, rgba(0, 0, 0, 0) 16%), #fc0;
+  background-position: 0 0, 6px 6px;
+  background-clip: border-box;
+  background-origin: padding-box;
+  background-size: 12px 12px;
+}
+
+a.btn-border span {
+  position: relative;
+
+  display: block;
+
+  padding: 1.25rem 3rem;
+
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 0.5rem;
+  background: #fff;
+}
+
+a.btn-border:hover {
+  background-position: 0 0, 8px 8px;
+  background-size: 16px 16px;
 }
 
 

@@ -4,12 +4,7 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <h1 style="text-align: center">ドラムロール大喜利システム</h1>
-  <h2 id="odai_text" style="text-align: center">
-    「ハサミを刃の方を向けて渡してきそうなHajimariの人第1位は？」
-  </h2>
-  <div align="center" style="padding-top: 50px;">
-    <button id="odai_change">お題を変える</button>
-  </div>
+
   <audio id="oogiri" preload="auto">
     <source src="music/music1.mp3" type="audio/mp3" loop controls />
   </audio>
@@ -17,8 +12,16 @@
     <button id="loop">START</button>
     <button id="stop">STOP</button>
   </div> -->
-  <div style="display: flex;padding-top: 200px;">
-    <a class="btn-emergency">
+  <div style="border: 15px solid;">
+  <p id="odai_text" style="text-align: center;font-size: large;">
+    「ハサミを刃の方を向けて渡してきそうなHajimariの人第1位は？」
+  </p> 
+  </div>
+   <div align="center" style="padding-top: 50px;">
+    <a id="odai_change" class="btn btn-border"><span>お題を変える</span></a>
+  </div>
+  <div style="display: flex;">
+    <a class="btn-emergency" style="padding-left: 100px;">
       <span class="btn-emergency-bottom"></span>
       <span class="btn-emergency-start-top" id="loop"><span>START</span></span>
     </a>
