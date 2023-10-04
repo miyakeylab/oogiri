@@ -8,7 +8,7 @@
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  font-size: 62.5%;
+  /* font-size: 62.5%; */
 }
 
 body{
@@ -229,4 +229,10 @@ a.btn-border:hover {
 }
 
 
-
+p {
+  display: block;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
