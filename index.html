@@ -28,6 +28,9 @@
       <span class="btn-emergency-top" id="stop"><span>STOP</span></span>
     </a>
   </div>
+  <div align="center" style="padding-top: 20px;">
+    <a id="ippon" class="btn btn-border"><span>IPPON</span></a>
+  </div>
   <script type="text/javascript">
     let odai = [
       "ハサミを刃の方を向けて渡してきそうな",
@@ -42,6 +45,7 @@
     // Audioオブジェクトを作成
     let ad = new Audio("music/drumroll_3.mp3");
     let sy = new Audio("music/cymbal.mp3");
+    let ipp = new Audio("music/ippon_voice.mp3");
     let odaiIndex = 0;
     let mainText = "Hajimariの人第一位は？"
 
@@ -76,6 +80,16 @@
         odaiIndex++;
         if (odaiIndex >= odai.length) odaiIndex = 0;
         odaiText.innerHTML = odai[odaiIndex] + mainText;
+      },
+      false
+    );
+    let ippon_on = document.getElementById("ippon");
+    ippon_on.addEventListener(
+      "click",
+      function () {
+        ipp.pause();
+        ipp.currentTime = 0;
+        ipp.play();
       },
       false
     );
